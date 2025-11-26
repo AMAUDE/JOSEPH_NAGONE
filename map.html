@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoCI - Cartographie des Services en Côte d'Ivoire</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="map.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="logo-container">
+          <i class="fas fa-map-marked-alt logo-icon"></i>
+          <h1>Geo<span>CI</span></h1>
+        </div>
+        <p class="app-tagline">Cartographie des services publics en Côte d'Ivoire</p>
+      </div>
+      
+      <div class="header-controls">
+        <div class="result-counter">
+          <span id="result-count" class="badge pulse">0</span>
+          <span class="result-text">établissements trouvés</span>
+        </div>
+        <button class="btn btn-primary" id="export-btn">
+          <i class="fas fa-download"></i> Exporter
+        </button>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2><i class="fas fa-sliders-h"></i> Panneau de contrôle</h2>
+          <button class="sidebar-toggle" id="sidebar-toggle">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        
+        <div class="sidebar-content">
+          <div class="card search-container">
+            <div class="card-header">
+              <i class="fas fa-search"></i> Recherche
+            </div>
+            <div class="card-body">
+              <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Nom, type ou localité...">
+                <button class="search-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card filter-section">
+            <div class="card-header">
+              <i class="fas fa-filter"></i> Filtres
+            </div>
+            <div class="card-body">
+              <div class="filter-group">
+                <label for="districtFilter"><i class="fas fa-city"></i> Villes</label>
+                <select id="districtFilter" class="custom-select">
+                  <option value="">Toutes les villes</option>
+                  <option value="ABIDJAN">Abidjan</option>
+                  <option value="BOUAFLE">Bouaflé</option>
+                  <option value="SINFRA">Sinfra</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="regionFilter"><i class="fas fa-tags"></i> Type de service</label>
+                <select id="regionFilter" class="custom-select">
+                  <option value="">Tous les types</option>
+                  <option value="ECOLE">École</option>
+                  <option value="MARIE">Mairie</option>
+                  <option value="MARCHE">Marché</option>
+                  <option value="HOPITAL">Hôpital</option>
+                  <option value="COMISSARIAT">Commissariat</option>
+                </select>
+              </div>
+
+              <div class="filter-actions">
+                <button class="btn btn-outline" id="reset-filters">
+                  <i class="fas fa-undo"></i> Réinitialiser
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card results-section">
+            <div class="card-header">
+              <div class="results-header">
+                <i class="fas fa-list-ul"></i> Résultats
+                <div class="results-sort">
+                  <span>Trier par:</span>
+                  <select id="sort-results" class="custom-select small">
+                    <option value="name">Nom</option>
+                    <option value="type">Type</option>
+                    <option value="district">Ville</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="card-body scrollable">
+              <ul id="resultsList" class="results-list"></ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="map-container">
+        <div id="map"></div>
+        
+        <div class="map-controls">
+          <button class="map-control-btn" id="zoom-in" title="Zoom in">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="map-control-btn" id="zoom-out" title="Zoom out">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button class="map-control-btn" id="locate-me" title="Ma position">
+            <i class="fas fa-location-arrow"></i>
+          </button>
+        </div>
+        
+        <div class="map-legend card">
+          <div class="card-header">
+            <i class="fas fa-map-pin"></i> Légende
+          </div>
+          <div class="card-body">
+            <div class="legend-item">
+              <span class="legend-icon school"><i class="fas fa-school"></i></span>
+              <span>Établissement scolaire</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-icon health"><i class="fas fa-hospital"></i></span>
+              <span>Centre de santé</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-icon admin"><i class="fas fa-landmark"></i></span>
+              <span>Administration</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-icon market"><i class="fas fa-shopping-basket"></i></span>
+              <span>Marché</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-icon police"><i class="fas fa-shield-alt"></i></span>
+              <span>Police</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="loading-overlay" id="loading-overlay">
+          <div class="spinner"></div>
+          <p>Chargement des données...</p>
+        </div>
+      </main>
+    </div>
+    
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-map-marked-alt"></i> GeoCI
+        </div>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-info-circle"></i> À propos</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Aide</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="footer-copyright">
+          © 2023 Ministère de l'Intérieur - Côte d'Ivoire
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeoCI - Carte des services</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-container">
+        <i class="fas fa-map-marked-alt logo-icon"></i>
+        <h1>Geo<span>CI</span></h1>
+      </div>
+      <div class="header-controls">
+        <div class="result-counter">
+          <span id="result-count" class="badge pulse">0</span>
+          <span class="result-text">établissements trouvés</span>
+        </div>
+        <button id="export-btn" class="btn btn-primary"><i class="fas fa-download"></i> Exporter</button>
+        <label class="theme-toggle">
+          <input type="checkbox" id="theme-switch" /> 🌙
+        </label>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2><i class="fas fa-sliders-h"></i> Filtres</h2>
+        </div>
+        <div class="sidebar-body">
+          <input type="text" id="searchInput" placeholder="Rechercher..." />
+          <select id="districtFilter">
+            <option value="">Toutes les villes</option>
+            <option value="ABIDJAN">Abidjan</option>
+            <option value="BOUAFLE">Bouaflé</option>
+            <option value="SINFRA">Sinfra</option>
+          </select>
+          <select id="regionFilter">
+            <option value="">Tous les types</option>
+            <option value="ECOLE">École</option>
+            <option value="HOPITAL">Hôpital</option>
+            <option value="MARIE">Mairie</option>
+            <option value="MARCHE">Marché</option>
+            <option value="COMISSARIAT">Commissariat</option>
+          </select>
+          <select id="sort-results">
+            <option value="name">Nom</option>
+            <option value="type">Type</option>
+            <option value="district">Ville</option>
+          </select>
+          <button id="reset-filters" class="btn btn-outline"><i class="fas fa-undo"></i> Réinitialiser</button>
+        </div>
+        <ul id="resultsList" class="results-list"></ul>
+      </aside>
+
+      <div class="map-container">
+        <div id="map"></div>
+
+        <div class="map-controls">
+          <button id="zoom-in" class="map-control-btn"><i class="fas fa-plus"></i></button>
+          <button id="zoom-out" class="map-control-btn"><i class="fas fa-minus"></i></button>
+          <button id="locate-me" class="map-control-btn"><i class="fas fa-location-arrow"></i></button>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay">
+          <div class="spinner"></div>
+          <p>Chargement...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html> -->

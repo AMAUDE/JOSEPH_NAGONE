@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMAUDE - Accueil</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Styles personnalisés -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning py-3 sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="presentation.html">
+        <img src="images/logo.png" alt="Logo" style="height: 40px;" class="me-2">
+        AMAUDE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="presentation.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="map.html">Map</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="bibliotheque.html">Bibliothèque</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="media.html">Media</a></li>
+          <!-- <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Contact</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-bg" style="background-image: url('images/mairie-bouafle.jpg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center">
+            <h1 class="display-4 fw-bold">Bienvenue sur AMAUDE</h1>
+            <p class="lead">Plateforme numérique d'accès aux données urbaines de Bouaflé</p>
+            <a href="#features" class="btn btn-light btn-lg mt-3">Explorer</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-bg" style="background-image: url('images/pont-bouafle.jpg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center">
+            <h1 class="display-4 fw-bold">Découvrez Bouaflé</h1>
+            <p class="lead">Visualisez les équipements et infrastructures de la ville</p>
+            <a href="#features" class="btn btn-outline-light btn-lg mt-3">Voir plus</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-bg" style="background-image: url('images/poisson.jpg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center">
+            <h1 class="display-4 fw-bold">Analyses Avancées</h1>
+            <p class="lead">Exploitez les données pour prendre des décisions éclairées</p>
+            <a href="#features" class="btn btn-warning btn-lg mt-3">Accéder</a>
+          </div>
+        </div>
+      </div>
+
+       <!-- Slide 4 -->
+      <div class="carousel-item">
+        <div class="carousel-bg" style="background-image: url('images/mairie-bouafle_2.jpg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center">
+            <h1 class="display-4 fw-bold">Analyses Avancées</h1>
+            <p class="lead">Exploitez les données pour prendre des décisions éclairées</p>
+            <a href="#features" class="btn btn-warning btn-lg mt-3">Accéder</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </section>
+
+  <!-- Section Recherche -->
+  <section class="search-section text-center py-5 bg-warning">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Comment pouvons-nous vous être utile ?</h2>
+      <form class="d-flex justify-content-center">
+        <input type="text" class="form-control w-50 me-2" placeholder="Trouver un produit, un système, une solution" />
+        <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </section>
+
+
+   <!-- Section bibliothèque -->
+  <section class="py-5">
+    <div class="container">
+   <h2 class="section-title"><i class="fas fa-user-tie me-2"></i> Les documents numérique</h2>
+      <div class="row g-4">
+
+        <!-- Exemple de document -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-pdf text-danger me-2"></i>Memoire</h5>
+              <p class="card-text">Analyse des infrastructures urbaines de Bouaflé pour l'année 2024.</p>
+              <a href="docs/rapport-2024.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deuxième document -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-alt text-success me-2"></i>Thèse sur la planification urbaine</h5>
+              <p class="card-text">Mémoire universitaire sur les politiques d’aménagement à Bouaflé.</p>
+              <a href="docs/these-planification.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- Troisième document -->
+
+          <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-alt text-success me-2"></i>Article</h5>
+              <p class="card-text">Mémoire universitaire sur les politiques d’aménagement à Bouaflé.</p>
+              <a href="docs/these-planification.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+   <!-- Section Personnalités Administratives -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-user-tie me-2"></i> Personnalités Administratives</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Maire -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/maire_Jean_Koffi_Kouadio.jpg" class="card-img-top" alt="Jean Koffi Kouadio - Maire">
+            <div class="card-body text-center">
+              <h5 class="card-title">Jean Koffi Kouadio</h5>
+              <p class="card-text">Maire de la commune, porteur de projets urbains et d'infrastructures.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Préfète -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/Le-prefet-de-prefecture-de-Bouafle.jpg" class="card-img-top" alt="Dr. Fatou Coulibaly - Préfète">
+            <div class="card-body text-center">
+              <h5 class="card-title">Dr. Fatou Coulibaly</h5>
+              <p class="card-text">Préfète de région, responsable de l'administration territoriale.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directeur Éducation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/M._Yao_Narcisse.jpg" class="card-img-top" alt="Yao Narcisse - Directeur Éducation">
+            <div class="card-body text-center">
+              <h5 class="card-title">M. Yao Narcisse</h5>
+              <p class="card-text">Directeur régional de l'éducation nationale.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Autorités Coutumières -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-crown me-2"></i> Autorités Coutumières</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Chef traditionnel -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card profile-card">
+            <img src="images/Ane-0000.jpg" class="card-img-top" alt="Nanan Kouassi B. - Chef traditionnel">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nanan Kouassi B.</h5>
+              <p class="card-text">Chef du canton central, gardien des us et traditions.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conseil des Sages -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card profile-card">
+            <img src="images/conseil_des_sage.jpg" class="card-img-top" alt="Conseil des Sages">
+            <div class="card-body text-center">
+              <h5 class="card-title">Conseil des Sages</h5>
+              <p class="card-text">Instance coutumière jouant un rôle de médiation dans la communauté.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Sites & Patrimoines -->
+  <section class="py-5 bg-warning bg-opacity-10">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-landmark me-2"></i> Sites & Patrimoines Importants</h2>
+
+      <!-- Forêt classée -->
+      <div class="row heritage-item align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/foret.jpg" alt="Forêt classée de Bouaflé" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Forêt classée de Bouaflé</h3>
+            <p>La forêt classée de Bouaflé est une réserve naturelle protégée abritant une grande diversité de faune et de flore. Elle joue un rôle crucial dans la préservation de l'écosystème local et constitue un espace de recherche scientifique et d'éducation environnementale.</p>
+            <a href="#" class="btn btn-warning">Visiter virtuellement</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monument indépendance -->
+      <div class="row heritage-item align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/togo-independence-monument.jpg" alt="Monument de l'indépendance" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Monument de l'indépendance</h3>
+            <p>Érigé au rond-point central de la ville, ce monument symbolise l'histoire nationale et la lutte pour la liberté. Il constitue un repère emblématique pour les habitants et visiteurs de Bouaflé.</p>
+            <a href="#" class="btn btn-warning">Voir l'histoire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gare coloniale -->
+      <div class="row heritage-item align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/autrefois-min-1536x952.jpg" alt="Ancienne gare coloniale" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Ancienne gare coloniale</h3>
+            <p>Construite à l'époque coloniale, cette gare est un témoignage de l'histoire ferroviaire et architecturale de Bouaflé. Elle est aujourd'hui un lieu patrimonial chargé de mémoire.</p>
+            <a href="#" class="btn btn-warning">Découvrir l'histoire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Place des festivités -->
+      <div class="row heritage-item align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/La-place-Tchintchin-a-Bouafle.jpg" alt="Place des festivités" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Place des festivités</h3>
+            <p>Cœur des évènements culturels, politiques et sociaux de Bouaflé, la place des festivités est un espace public dynamique accueillant célébrations, concerts et manifestations.</p>
+            <a href="#" class="btn btn-warning">Voir les événements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Nos Fonctionnalités -->
+  <!-- <section id="features" class="features py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Nos <span>Fonctionnalités</span></h2>
+        <p class="lead">Découvrez ce que notre plateforme vous offre</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature mb-3">
+                <i class="fas fa-map-marked-alt fa-3x text-primary"></i>
+              </div>
+              <h3><a class="nav-link text-dark fw-semibold" href="map.html"> Cartographie interactive</a> </h3>
+              <p>Visualisez les données géospatiales de Bouaflé grâce à notre outil cartographique avancé.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature mb-3">
+                <i class="fas fa-database fa-3x text-primary"></i>
+              </div>
+              <h3> <a class="nav-link text-dark fw-semibold" href="#">Bibliothèque</a></h3>
+              <p>Presenter tous les travaux de recherche ou docmentaires traités sur la ville de Bouaflé.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature mb-3">
+                <i class="fas fa-photo-video fa-3x text-primary"></i>
+              </div>
+              <h3><a class="nav-link text-dark fw-semibold" href="media.html">Media</a></h3>
+              <p>Presenter les personnailités et patrimoine de la ville.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+
+  <section id="features" class="py-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Nos Fonctionnalités</h2>
+        <p class="lead text-muted">Découvrez ce que notre plateforme vous offre</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-hover">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
+                <i class="fas fa-map-marked-alt fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Cartographie interactive</h4>
+              <p class="text-muted">Visualisez les données géospatiales de Bouaflé grâce à notre outil cartographique avancé.</p>
+              <a href="map.html" class="btn btn-outline-primary mt-3">Explorer</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-hover">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
+                <i class="fas fa-book-open fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Bibliothèque numérique</h4>
+              <p class="text-muted">Accédez à tous les documents officiels et études sur la ville de Bouaflé.</p>
+              <a href="bibliotheque.html" class="btn btn-outline-primary mt-3">Consulter</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-hover">
+            <div class="card-body text-center p-4">
+              <div class="icon-feature bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
+                <i class="fas fa-users fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Annuaire des acteurs</h4>
+              <p class="text-muted">Découvrez les personnalités administratives et coutumières de la ville.</p>
+              <a href="media.html" class="btn btn-outline-primary mt-3">Découvrir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <img src="images/logo.png" alt="Logo AMAUDE" class="footer-logo">
+          <p>Plateforme de données urbaines de la ville de Bouaflé, offrant un accès aux informations clés sur la commune.</p>
+          <div class="social-icons mt-4">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Liens rapides</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="presentation.html">Accueil</a></li>
+            <li><a href="#">Map interactive</a></li>
+            <li><a href="#">Bibliothèque</a></li>
+            <li><a href="media.html">Média</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Ressources</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#">Documents officiels</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Statistiques</a></li>
+            <li><a href="#">Galeries photos</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contactez-nous</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Mairie de Bouaflé, Côte d'Ivoire</p>
+            <p><i class="fas fa-phone"></i> +225 07 67 45 90 58</p>
+            <p><i class="fas fa-envelope"></i> contact@amaude.ci</p>
+            <p><i class="fas fa-clock"></i> Lun-Ven: 8h-17h</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p class="mb-0">&copy; 2025 AMAUDE. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+   
+  <!-- <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">AMAUDE</h5>
+          <p>Plateforme de données urbaines de la ville de Bouaflé.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Liens rapides</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Accueil</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Données</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p><i class="fas fa-map-marker-alt me-2"></i>Bouaflé, Côte d'Ivoire</p>
+          <p><i class="fas fa-phone me-2"></i>+225 07 67 45 90 58</p>
+          <p><i class="fas fa-envelope me-2"></i>contact@amaude.ci</p>
+        </div>
+      </div>
+      <hr class="border-light" />
+      <p class="text-center mb-0">&copy; 2025 AMAUDE. Tous droits réservés.</p>
+    </div>
+  </footer> -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

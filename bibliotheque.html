@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AMAUDE - Bibliothèque</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- Styles personnalisés -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning py-3 sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="presentation.html">
+        <img src="images/logo.png" alt="Logo" style="height: 40px;" class="me-2">
+        AMAUDE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="presentation.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Map</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold active" href="bibliotheque.html">Bibliothèque</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="media.html">Media</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- En-tête -->
+  <header class="py-5 bg-dark text-white text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Bibliothèque Numérique</h1>
+      <p class="lead">Accédez aux publications, documents et travaux sur la ville de Bouaflé</p>
+    </div>
+  </header>
+
+  <!-- Section bibliothèque -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Exemple de document -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-pdf text-danger me-2"></i>Memoire</h5>
+              <p class="card-text">Analyse des infrastructures urbaines de Bouaflé pour l'année 2024.</p>
+              <a href="docs/rapport-2024.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deuxième document -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-alt text-success me-2"></i>Thèse sur la planification urbaine</h5>
+              <p class="card-text">Mémoire universitaire sur les politiques d’aménagement à Bouaflé.</p>
+              <a href="docs/these-planification.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- Troisième document -->
+
+          <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-file-alt text-success me-2"></i>Article</h5>
+              <p class="card-text">Mémoire universitaire sur les politiques d’aménagement à Bouaflé.</p>
+              <a href="docs/these-planification.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-download me-1"></i>Télécharger
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">AMAUDE</h5>
+          <p>Plateforme de données urbaines de la ville de Bouaflé.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Liens rapides</h5>
+          <ul class="list-unstyled">
+            <li><a href="presentation.html" class="text-white text-decoration-none">Accueil</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Données</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p><i class="fas fa-map-marker-alt me-2"></i>Bouaflé, Côte d'Ivoire</p>
+          <p><i class="fas fa-phone me-2"></i>+225 07 67 45 90 58</p>
+          <p><i class="fas fa-envelope me-2"></i>contact@amaude.ci</p>
+        </div>
+      </div>
+      <hr class="border-light" />
+      <p class="text-center mb-0">&copy; 2025 AMAUDE. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

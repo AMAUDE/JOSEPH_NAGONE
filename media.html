@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AMAUDE - Media</title>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- Styles personnalisés -->
+  <link rel="stylesheet" href="media.css" />
+</head>
+<body>
+
+  <!-- Navbar identique -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning py-3 sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="presentation.html">
+        <img src="images/logo.png" alt="Logo" style="height: 40px;" class="me-2">
+        AMAUDE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="presentation.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Map</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Bibliothèque</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold active" href="media.html">Media</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero-header text-white text-center">
+    <div class="container position-relative">
+      <h1 class="display-3 fw-bold mb-4">Personnalités et Patrimoine</h1>
+      <p class="lead">Découvrez les figures importantes et les richesses culturelles de Bouaflé</p>
+    </div>
+  </header>
+
+  <!-- Section Personnalités Administratives -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-user-tie me-2"></i> Personnalités Administratives</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Maire -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/maire_Jean_Koffi_Kouadio.jpg" class="card-img-top" alt="Jean Koffi Kouadio - Maire">
+            <div class="card-body text-center">
+              <h5 class="card-title">Jean Koffi Kouadio</h5>
+              <p class="card-text">Maire de la commune, porteur de projets urbains et d'infrastructures.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Préfète -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/Le-prefet-de-prefecture-de-Bouafle.jpg" class="card-img-top" alt="Dr. Fatou Coulibaly - Préfète">
+            <div class="card-body text-center">
+              <h5 class="card-title">Dr. Fatou Coulibaly</h5>
+              <p class="card-text">Préfète de région, responsable de l'administration territoriale.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directeur Éducation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card profile-card">
+            <img src="images/M._Yao_Narcisse.jpg" class="card-img-top" alt="Yao Narcisse - Directeur Éducation">
+            <div class="card-body text-center">
+              <h5 class="card-title">M. Yao Narcisse</h5>
+              <p class="card-text">Directeur régional de l'éducation nationale.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">Voir profil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Autorités Coutumières -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-crown me-2"></i> Autorités Coutumières</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Chef traditionnel -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card profile-card">
+            <img src="images/Ane-0000.jpg" class="card-img-top" alt="Nanan Kouassi B. - Chef traditionnel">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nanan Kouassi B.</h5>
+              <p class="card-text">Chef du canton central, gardien des us et traditions.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conseil des Sages -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card profile-card">
+            <img src="images/conseil_des_sage.jpg" class="card-img-top" alt="Conseil des Sages">
+            <div class="card-body text-center">
+              <h5 class="card-title">Conseil des Sages</h5>
+              <p class="card-text">Instance coutumière jouant un rôle de médiation dans la communauté.</p>
+              <a href="#" class="btn btn-outline-warning btn-sm">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Sites & Patrimoines -->
+  <section class="py-5 bg-warning bg-opacity-10">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-landmark me-2"></i> Sites & Patrimoines Importants</h2>
+
+      <!-- Forêt classée -->
+      <div class="row heritage-item align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/foret.jpg" alt="Forêt classée de Bouaflé" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Forêt classée de Bouaflé</h3>
+            <p>La forêt classée de Bouaflé est une réserve naturelle protégée abritant une grande diversité de faune et de flore. Elle joue un rôle crucial dans la préservation de l'écosystème local et constitue un espace de recherche scientifique et d'éducation environnementale.</p>
+            <a href="#" class="btn btn-warning">Visiter virtuellement</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monument indépendance -->
+      <div class="row heritage-item align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/togo-independence-monument.jpg" alt="Monument de l'indépendance" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Monument de l'indépendance</h3>
+            <p>Érigé au rond-point central de la ville, ce monument symbolise l'histoire nationale et la lutte pour la liberté. Il constitue un repère emblématique pour les habitants et visiteurs de Bouaflé.</p>
+            <a href="#" class="btn btn-warning">Voir l'histoire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gare coloniale -->
+      <div class="row heritage-item align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/autrefois-min-1536x952.jpg" alt="Ancienne gare coloniale" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Ancienne gare coloniale</h3>
+            <p>Construite à l'époque coloniale, cette gare est un témoignage de l'histoire ferroviaire et architecturale de Bouaflé. Elle est aujourd'hui un lieu patrimonial chargé de mémoire.</p>
+            <a href="#" class="btn btn-warning">Découvrir l'histoire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Place des festivités -->
+      <div class="row heritage-item align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="heritage-img">
+            <img src="images/La-place-Tchintchin-a-Bouafle.jpg" alt="Place des festivités" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="heritage-content">
+            <h3>Place des festivités</h3>
+            <p>Cœur des évènements culturels, politiques et sociaux de Bouaflé, la place des festivités est un espace public dynamique accueillant célébrations, concerts et manifestations.</p>
+            <a href="#" class="btn btn-warning">Voir les événements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <img src="images/logo.png" alt="Logo AMAUDE" class="footer-logo">
+          <p>Plateforme de données urbaines de la ville de Bouaflé, offrant un accès aux informations clés sur la commune.</p>
+          <div class="social-icons mt-4">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Liens rapides</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="presentation.html">Accueil</a></li>
+            <li><a href="#">Map interactive</a></li>
+            <li><a href="#">Bibliothèque</a></li>
+            <li><a href="media.html">Média</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Ressources</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#">Documents officiels</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Statistiques</a></li>
+            <li><a href="#">Galeries photos</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Contactez-nous</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Mairie de Bouaflé, Côte d'Ivoire</p>
+            <p><i class="fas fa-phone"></i> +225 07 67 45 90 58</p>
+            <p><i class="fas fa-envelope"></i> contact@amaude.ci</p>
+            <p><i class="fas fa-clock"></i> Lun-Ven: 8h-17h</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p class="mb-0">&copy; 2025 AMAUDE. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
